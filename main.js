@@ -56,7 +56,6 @@ function setBackground(){
         document.body.style.backgroundImage = "url('img/triangle2')";
      } else if(hour == 20 || hour == 21 || hour == 22 || hour == 23 ){
         document.body.style.backgroundImage = "url('img/polygon4')";
-        document.body.style.color = "white";
      }
 }
 
