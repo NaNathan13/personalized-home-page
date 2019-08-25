@@ -12,7 +12,8 @@ let time = document.querySelector('#time'),
     monthFocus1 = document.querySelector('.focus-month-item1'),
     monthFocus2 = document.querySelector('.focus-month-item1'),
     monthFocus3 = document.querySelector('.focus-month-item1'),
-    daysTilWedding = document.querySelector('.wedding-day-number')
+    daysTilWedding = document.querySelector('.wedding-day-number'),
+    daysTilCyberpunk = document.querySelector('.cyberpunk-day-number')
 
 
 // Clock
@@ -62,30 +63,31 @@ function setGreeting(){
 
 let dayInMilliseconds = 1000 * 60 * 60 * 24;
 
-//Wedding countdown
-var countDownDate = new Date("May 16, 2020 11:00:00").getTime();
+//Wedding and Cyberpunk countdown
+let countDownDateWedding = new Date("May 16, 2020 11:00:00").getTime();
+let countDownDateCyberpunk = new Date("April 16, 2020 11:00:00").getTime();
+let x = setInterval(function() {
+    let now = new Date().getTime();
+    let timeUntilWedding = countDownDateWedding - now;
+    let timeUntilCyberpunk = countDownDateCyberpunk - now;
 
-// Update the count down every 1 second
-var x = setInterval(function() {
-
-  // Get today's date and time
-  var now = new Date().getTime();
-
-  // Find the distance between now and the count down date
-  var distance = countDownDate - now;
-
-  // Time calculations for days, hours, minutes and seconds
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-
-  // Display the result in the element with id="demo"
-  daysTilWedding.innerHTML = days + 1;
+    // Time calculations for days
+    let daysWedding = Math.floor(timeUntilWedding / (1000 * 60 * 60 * 24));
+    let daysCyberpunk = Math.floor(timeUntilCyberpunk / (1000 * 60 * 60 * 24));
+    
+    daysTilWedding.innerHTML = daysWedding + 1;
+    daysTilCyberpunk.innerHTML = daysCyberpunk + 1;
 
   // If the count down is finished, write some text 
-  if (distance < 0) {
-    clearInterval(x);
-    daysTilWedding.innerHTML = "TODAY IS THE DAYI GET TO MARRY THE LOVE OF MY LIFE";
+  if (timeUntilWedding < 0) {
+    daysTilWedding.innerHTML = "TODAY IS THE DAY I GET TO MARRY THE LOVE OF MY LIFE";
+  }
+
+  if (timeUntilCyberpunk < 0) {
+    daysTilCyberpunk.innerHTML = "CYBERPUNK 2077! LEGOOOO!";
   }
 }, 1000);
+
 
 
 //run functions 
