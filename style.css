@@ -45,6 +45,11 @@ table {
 
 
 /* styles start */
+body{
+    font-family: 'Karla', sans-serif;
+    font-size: 30px;
+    font-weight: 600;}
+
 .bg{
     background-image: url('cyberpunk.jpg');
     background-color: #cccccc; /* Used if the image is unavailable */
@@ -52,5 +57,21 @@ table {
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+/* fonts
+font-family: 'Karla', sans-serif;
+*/
+.main-content-container{
+    text-align: center;
+    margin: auto auto;
+    position: absolute;
+    left: 20%;
+    top: 25%;
+}
+
+.focus-goal-container{
+    display: flex;
+    flex-direction: row;
 }
 
