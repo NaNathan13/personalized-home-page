@@ -15,6 +15,73 @@ let time = document.querySelector('#time'),
     daysTilWedding = document.querySelector('.wedding-day-number'),
     daysTilCyberpunk = document.querySelector('.cyberpunk-day-number')
 
+    function setLocalStorage(){
+        //today1
+        if(localStorage.getItem('todayitem1') === null){
+            todayFocus1.textContent = 'enter goal'
+        } else{
+            todayFocus1.textContent = localStorage.getItem('todayitem1');
+        }
+        //set todayfocus1
+        function setTodayFocus1(e){
+            if(e.type === 'keypress'){
+
+            } else{
+                
+            }
+        }
+        todayFocus1.addEventListener('keypress', setTodayFocus1);
+        todayFocus1.addEventListener('blur', setTodayFocus1);
+
+        // //today2
+        // if(localStorage.getItem('todayitem2') === null){
+        //     todayFocus2.textContent = 'Example 2'
+        // } else{
+        //     todayFocus2.textContent = localStorage.getItem('todayitem2');
+        // }
+        // //today3
+        // if(localStorage.getItem('todayitem3') === null){
+        //     todayFocus3.textContent = 'Example 3'
+        // } else{
+        //     todayFocus3.textContent = localStorage.getItem('todayitem3');
+        // }
+        // //weekFocus1
+        // if(localStorage.getItem('weekitem1') === null){
+        //     todayFocus1.textContent = 'Example 1'
+        // } else{
+        //     todayFocus1.textContent = localStorage.getItem('todayitem1');
+        // }
+        // //weekFocus2
+        // if(localStorage.getItem('weekitem2') === null){
+        //     weekFocus2.textContent = 'Example 2'
+        // } else{
+        //     weekFocus2.textContent = localStorage.getItem('weekitem2');
+        // }
+        // //weekFocus3
+        // if(localStorage.getItem('weekitem3') === null){
+        //     weekFocus3.textContent = 'Example 3'
+        // } else{
+        //     weekFocus3.textContent = localStorage.getItem('weekitem3');
+        // }
+        // //monthFocus1
+        // if(localStorage.getItem('monthitem1') === null){
+        //     monthFocus1.textContent = 'Example 1'
+        // } else{
+        //     monthFocus1.textContent = localStorage.getItem('monthitem1');
+        // }
+        // //monthFocus2
+        // if(localStorage.getItem('monthitem2') === null){
+        //     monthFocus2.textContent = 'Example 2'
+        // } else{
+        //     monthFocus2.textContent = localStorage.getItem('monthitem2');
+        // }
+        // //monthFocus3
+        // if(localStorage.getItem('monthitem3') === null){
+        //     monthFocus3.textContent = 'Example 3'
+        // } else{
+        //     monthFocus3.textContent = localStorage.getItem('monthitem3');
+        // }
+    }
 
 // Clock
 
@@ -93,6 +160,7 @@ let x = setInterval(function() {
 //run functions 
 showTime();
 setGreeting();
+setLocalStorage();
 setInterval(function() { 
     let daysLeft = 279
     daysLeft--;
