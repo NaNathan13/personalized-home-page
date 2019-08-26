@@ -23,16 +23,6 @@ let time = document.querySelector('#time'),
             todayFocus1.textContent = localStorage.getItem('todayitem1');
         }
         //set todayfocus1
-        function setTodayFocus1(e){
-            if(e.type === 'keypress'){
-
-            } else{
-                
-            }
-        }
-        todayFocus1.addEventListener('keypress', setTodayFocus1);
-        todayFocus1.addEventListener('blur', setTodayFocus1);
-
         // //today2
         // if(localStorage.getItem('todayitem2') === null){
         //     todayFocus2.textContent = 'Example 2'
@@ -82,6 +72,20 @@ let time = document.querySelector('#time'),
         //     monthFocus3.textContent = localStorage.getItem('monthitem3');
         // }
     }
+            function setTodayFocus1(e){
+            if(e.type === 'keypress'){
+                //make sure enter is pressed
+                if(e.which == 13 || e.keyCode == 13){
+                    localStorage.setItem('todayFocus1', e.target.innerText);
+                    todayFocus1.blur();
+                }
+            } else{
+                // saves content if user moves off content
+                localStorage.setItem('todayFocus1', e.target.innerText);
+            }
+        }
+        todayFocus1.addEventListener('keypress', setTodayFocus1);
+        todayFocus1.addEventListener('blur', setTodayFocus1);
 
 // Clock
 
